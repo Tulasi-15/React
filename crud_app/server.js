@@ -1,8 +1,10 @@
 const express = require('express');
+const dotenv = require('dotenv')
 
 const app = express();
-
+dotenv.config({path:'config.env'});
+const PORT = process.env.PORT || 8080;
 app.get('/',(req,res)=>{
     res.send("crud application");
 })
-app.listen(3000 , ()=>{console.log(`crud running in http://localhost:3000`)});
+app.listen(PORT , ()=>{console.log(`crud running in http://localhost:${PORT}`)});

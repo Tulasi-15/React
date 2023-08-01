@@ -1,8 +1,18 @@
+import axios from "axios";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
 export default function Users(){
-    const [user , setUser] = useState([{name:"Mac",email:"mac0159@gmail.com",phone:"7358444869",education:"IT"}]);
+    const [user , setUser] = useState([]);
+
+    axios.get('http://localhost:8080/')
+    .then(res => setUser(res.data));
+
+    const handleDelete=(id)=>{
+        axios.delete('http://localhost:8080/delete/'+id)
+        .then(res => console.log("Deleted"+res));
+    }
+
     return(
         <div className="container">
             <div className="head">
@@ -30,7 +40,7 @@ export default function Users(){
                             <td>{item.education}</td>
                             <td>
                                 <button>update</button>
-                                <button>delete</button> 
+                                <button onClick={() => handleDelete(item._id)}>delete</button> 
                             </td>
                         </tr>
                     ))}

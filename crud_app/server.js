@@ -16,11 +16,17 @@ app.post('/createUser',(req,res)=>{
     console.log(req.body);
     userModel.create(req.body)
     .then(u => res.json(u))
-    // .then(err => res.json(err));
 })
 
+app.delete('/delete/:id',(req,res)=>{
+    const id = req.params['id']
+    userModel.deleteOne({_id:id})
+    .then(userr => res.json(userr));
+})
 
 app.get('/',(req,res)=>{
-    res.status(200);
+    userModel.find({})
+    .then(user => res.json(user))
+    .catch(err => res.json(err));
 })
 app.listen(PORT , ()=>{console.log(`crud running in http://localhost:${PORT}`)});

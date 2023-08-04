@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Users from './Users';
+import Update from './Update';
 import Add from './Add';
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Users/>}/>
           <Route path='/createUser' element={<Add/>}/>
+          <Route path='/updateUser' element={<Update/>}/>
         </Routes>
       </BrowserRouter>
     </div>

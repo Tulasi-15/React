@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
 export default function Users(){
     const [user , setUser] = useState([]);
 
-    axios.get('http://localhost:8080/')
-    .then(res => setUser(res.data));
+    useEffect(()=>{
+        axios.get('http://localhost:8080/')
+        .then(res => setUser(res.data));
 
+    })
     const handleDelete=(id)=>{
         axios.delete('http://localhost:8080/delete/'+id)
         .then(res => console.log("Deleted"+res));
@@ -39,7 +41,8 @@ export default function Users(){
                             <td>{item.phone}</td>
                             <td>{item.education}</td>
                             <td>
-                                <button>update</button>
+                                <Link to='/updateUser'><button>update</button></Link>
+                                
                                 <button onClick={() => handleDelete(item._id)}>delete</button> 
                             </td>
                         </tr>

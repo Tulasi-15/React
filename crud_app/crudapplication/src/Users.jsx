@@ -21,6 +21,7 @@ export default function Users(){
                 <div>
                     USERS
                 </div>
+                <div>CRUD APPLICATION</div>
                 <div>
                     <Link to='/createUser' ><button className="button">add</button></Link>
                 </div>
@@ -41,7 +42,7 @@ export default function Users(){
                             <td>{item.phone}</td>
                             <td>{item.education}</td>
                             <td>
-                                <Link to='/updateUser'><button>update</button></Link>
+                                <Link to={`/updateUser/${item._id}`}><button>update</button></Link>
                                 
                                 <button onClick={() => handleDelete(item._id)}>delete</button> 
                             </td>

@@ -10,11 +10,12 @@ export default function Add(){
     const handleSubmit = () =>{
         axios.post('http://localhost:8080/createUser',{name,email,phone,education})
         .then(e =>{
-            console.log('pp');
             navi('/');
         })
-        .catch(e => console.log(e));
-        console.log("submited");
+        .catch(e => {
+            // console.log(e.response.data.mes)
+            alert(`enter a valid ${e.response.data.mes}`);    
+        });
     }
 
     return(

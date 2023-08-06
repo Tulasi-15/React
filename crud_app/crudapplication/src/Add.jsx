@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Add(){
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
@@ -8,19 +10,21 @@ export default function Add(){
     const [education,setEdu] = useState("");
     const navi = useNavigate();
     const handleSubmit = () =>{
-        // console.log("submitted");
-        // console.log(education);
         axios.post('http://localhost:8080/createUser',{name,email,phone,education})
         .then(e =>{
             navi('/');
         })
         .catch(e => {
-            alert(`enter a valid ${e.response.data.mes}`);    
+            toast.warn(`enter a valid ${e.response.data.mes}`, {
+                position: toast.POSITION.TOP_CENTER
+              });
+             
         });
     }
 
     return(
         <div className='Bg'>
+            <ToastContainer/>
             <div className="container1">
                 <div className='Add_Box'>
                     <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)}/>

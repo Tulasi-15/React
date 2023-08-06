@@ -27,7 +27,7 @@ app.post('/createUser',(req,res)=>{
         res.status(400).send(
             {mes:vali_result.mes}
         );
-        console.log("false");
+       // console.log("false");
     }
 
 })
@@ -63,7 +63,7 @@ app.post('/updateUser/:id',(req, res)=>{
         console.log("false");
     }
 
-    console.log(req.body);
+    //console.log(req.body);
 })
 
 
@@ -88,6 +88,12 @@ function validate(val){
             result: false ,
             mes:"Phone number"
         };
+    }
+    if(val.education == ''){
+        return{
+            result:false,
+            mes:"education"
+        }
     }
     return {result:true}
 }

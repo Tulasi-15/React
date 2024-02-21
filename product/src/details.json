@@ -1,0 +1,53 @@
+[
+    [
+        {"name":"iphone",
+        "price":200000,
+        "imgadd":"./imgs/mobile.jpeg"
+        },
+        {"name":"ONE PLUS",
+        "price":200000,
+        "imgadd":"./imgs/mobile.jpeg"
+        },
+        {"name":"Samsung",
+        "price":200000,
+        "imgadd":"./imgs/mobile.jpeg"
+        }
+        
+    ]
+    ,[
+        {"name":"Pant",
+        "price":9111,
+    "imgadd":"./imgs/mobile.jpeg"
+    },
+        {"name":"Shirt",
+        "price":9111,
+    "imgadd":"./imgs/mobile.jpeg"
+    },
+        {"name":"T-shirt",
+        "price":9111,
+    "imgadd":"./imgs/mobile.jpeg"
+    },{"name":"T-shirt",
+    "price":9111,
+"imgadd":"./imgs/mobile.jpeg"
+},{"name":"T-shirt",
+"price":9111,
+"imgadd":"./imgs/mobile.jpeg"
+}
+        
+    ],[
+        {"name":"Headphone",
+        "price":2,
+    "imgadd":"./imgs/mobile.jpeg"
+    },
+        {"name":"Mouse",
+        "price":2,
+    "imgadd":"./imgs/mobile.jpeg"
+    },
+        {"name":"keyboard",
+        "price":0,
+    "imgadd":"./imgs/mobile.jpeg"
+    }
+        
+    ]
+    
+]
